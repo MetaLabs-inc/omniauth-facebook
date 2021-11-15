@@ -1,3 +1,5 @@
+## Disclaimer
+
 This fork is up to date with the original repo and has merged [This PR](https://github.com/simi/omniauth-facebook/pull/315) created by [
 Eric Newbury](https://github.com/enewbury) which allows to use this gem with the facebook mobile sdk's.
 This will be maintained up to date as long as the original repo does not support facebook mobile sdk's.
