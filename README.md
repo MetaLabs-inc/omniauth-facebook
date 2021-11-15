@@ -1,6 +1,6 @@
-# OmniAuth Facebook &nbsp;[![Build Status](https://secure.travis-ci.org/simi/omniauth-facebook.svg?branch=master)](https://travis-ci.org/simi/omniauth-facebook) [![Gem Version](https://img.shields.io/gem/v/omniauth-facebook.svg)](https://rubygems.org/gems/omniauth-facebook)
-
-📣 **NOTICE** We’re looking for maintainers to help keep this project up-to-date. If you are interested in helping please open an Issue expressing your interest. Thanks! 📣
+This fork is up to date with the original repo and has merged [This PR](https://github.com/simi/omniauth-facebook/pull/315) created by [
+Eric Newbury](https://github.com/enewbury) which allows to use this gem with the facebook mobile sdk's.
+This will be maintained up to date as long as the original repo does not support facebook mobile sdk's.
 
 **These notes are based on master, please see tags for README pertaining to specific releases.**
 
@@ -135,6 +135,11 @@ When you call `/auth/facebook/callback` in the success callback of `FB.login` th
 1. parse it,
 2. extract the authorization code contained in it
 3. and hit Facebook and obtain an access token which will get placed in the `request.env['omniauth.auth']['credentials']` hash.
+
+## Client-side Flow with Facebook Android and ioS SDK
+
+A long lived access token is returned by the native sdks.  This flow is supported by sending an "access_token" query parameter to your callback.  This token is then verified with facebook using your client_id and client_secret before being used.
+Be sure to leave CSRF protection on for this method of authentication.
 
 ## Token Expiry
 

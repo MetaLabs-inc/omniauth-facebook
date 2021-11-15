@@ -32,7 +32,7 @@ end
 
 class StrategyTestCase < TestCase
   def setup
-    @request = stub('Request')
+    @request = stub('Request', {})
     @request.stubs(:params).returns({})
     @request.stubs(:cookies).returns({})
     @request.stubs(:env).returns({})
@@ -41,9 +41,8 @@ class StrategyTestCase < TestCase
 
     @client_id = '123'
     @client_secret = '53cr3tz'
-    @options = {}
 
-    @facebook_api_version = OmniAuth::Strategies::Facebook::DEFAULT_FACEBOOK_API_VERSION
+    @options = nil
   end
 
   def strategy
@@ -56,4 +55,4 @@ class StrategyTestCase < TestCase
   end
 end
 
-Dir[File.expand_path('../support/**/*', __FILE__)].each(&method(:require))
+Dir[File.expand_path('../support/**/*', __FILE__)].each &method(:require)
